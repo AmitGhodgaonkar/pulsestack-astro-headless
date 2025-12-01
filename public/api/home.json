@@ -4,7 +4,7 @@
     "description": "Turn scattered customer feedback into a clear, AI-prioritized roadmap."
   },
   "hero": {
-    "eyebrow": "New · AI release impact analysis",
+    "eyebrow": "New · AI releases impact analysis",
     "title": "Turn scattered customer feedback into a clear, AI-prioritized roadmap.",
     "subtitle": "PulseStack connects feedback from all your tools, finds patterns with AI, and tells you exactly what to ship next — and why.",
     "primaryCta": { "label": "Start free trial", "href": "/pricing" },
