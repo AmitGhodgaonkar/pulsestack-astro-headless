@@ -1,23 +1,21 @@
-const BASE = import.meta.env.PUBLIC_SITE_URL;
+const BASE = import.meta.env.PUBLIC_CMS_BASE_URL;
 
 if (!BASE) {
-  throw new Error(
-    "PUBLIC_SITE_URL is not set. Set it in Cloudflare Pages environment variables."
-  );
+  throw new Error("PUBLIC_CMS_BASE_URL is not set – define it in .env and Cloudflare Pages env vars.");
 }
 
 async function getJson<T>(slug: string): Promise<T> {
-  const url = `${BASE}/api/${slug}.json`;
+  const url = `${BASE.replace(/\/$/, "")}/${slug}`; // ensure no trailing slash issues
   const res = await fetch(url, { cache: "no-store" });
 
   if (!res.ok) {
-    throw new Error(`Failed to load content for ${slug} — ${res.status}`);
+    throw new Error(`Failed to load content for ${slug}: ${res.status} ${res.statusText}`);
   }
 
   return (await res.json()) as T;
 }
 
-export const getHomeContent = () => getJson("home");
-export const getFeaturesContent = () => getJson("features");
-export const getPricingContent = () => getJson("pricing");
-export const getFaqContent = () => getJson("faq");
+export const getHomeContent = () => getJson<HomeContent>("home");
+export const getFeaturesContent = () => getJson<FeaturesContent>("features");
+export const getPricingContent = () => getJson<PricingContent>("pricing");
+export const getFaqContent = () => getJson<FaqContent>("faq");
