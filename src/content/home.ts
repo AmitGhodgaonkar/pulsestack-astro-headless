@@ -1,0 +1,20 @@
+import type { HomeContent } from "../lib/cms";
+
+export const homeContent: HomeContent = {
+  seo: {
+    title: "PulseStack – AI-Powered Customer Insight for Product Teams",
+    description: "Turn scattered customer feedback into a clear, AI-prioritized roadmap.",
+  },
+  hero: {
+    eyebrow: "New · AI release impact analysis module",
+    title: "Turn scattered customer feedback into a clear, AI-prioritized roadmap.",
+    subtitle:
+      "PulseStack connects feedback from all your tools, finds patterns with AI, and tells you exactly what to ship next — and why.",
+    primaryCta: { label: "Start free trial", href: "/pricing" },
+    secondaryCta: { label: "Book a live demo", href: "/pricing" },
+  },
+  socialProof: {
+    heading: "Trusted by fast-moving product teams at",
+    logos: ["AcmeCloud", "Northwind", "BlueLeaf", "HelixOS", "Nova CRM"],
+  },
+};

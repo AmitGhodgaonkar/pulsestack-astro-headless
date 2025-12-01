@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PricingSection from "../components/PricingSection.astro";
+import { getPricingContent } from "../lib/cms";
+
+const content = await getPricingContent();
+---
+
+<BaseLayout title={content.seo.title} description={content.seo.description}>
+  <PricingSection content={content} />
+</BaseLayout>

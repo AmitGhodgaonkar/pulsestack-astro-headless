@@ -1,0 +1,23 @@
+---
+const { hero, featureCards } = Astro.props;
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16 space-y-10">
+  <div class="max-w-2xl space-y-3">
+    <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-50">
+      {hero.title}
+    </h1>
+    <p class="text-sm md:text-base text-slate-300">
+      {hero.subtitle}
+    </p>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-3">
+    {featureCards.map((card) => (
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-2">
+        <h2 class="text-sm font-medium text-slate-50">{card.title}</h2>
+        <p class="text-xs text-slate-300">{card.body}</p>
+      </div>
+    ))}
+  </div>
+</section>

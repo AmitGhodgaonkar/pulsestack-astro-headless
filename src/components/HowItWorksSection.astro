@@ -1,0 +1,27 @@
+---
+const { howItWorks } = Astro.props;
+---
+
+<section class="border-t border-slate-800 bg-slate-950/80">
+  <div class="mx-auto max-w-6xl px-4 py-16 space-y-10">
+    <div class="max-w-2xl space-y-3">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-50">
+        {howItWorks.title}
+      </h2>
+      <p class="text-sm md:text-base text-slate-300">
+        {howItWorks.subtitle}
+      </p>
+    </div>
+    <ol class="grid gap-6 md:grid-cols-3 text-sm">
+      {howItWorks.steps.map((step, index) => (
+        <li class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-2">
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-indigo-500/20 text-xs text-indigo-300">
+            {index + 1}
+          </span>
+          <h3 class="font-medium text-slate-50">{step.title}</h3>
+          <p class="text-xs text-slate-300">{step.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

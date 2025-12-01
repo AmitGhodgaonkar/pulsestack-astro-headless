@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FeaturesSection from "../components/FeaturesSection.astro";
+import HowItWorksSection from "../components/HowItWorksSection.astro";
+import { getFeaturesContent } from "../lib/cms";
+
+const content = await getFeaturesContent();
+---
+
+<BaseLayout title={content.seo.title} description={content.seo.description}>
+  <FeaturesSection hero={content.hero} featureCards={content.featureCards} />
+  <HowItWorksSection howItWorks={content.howItWorks} />
+</BaseLayout>
