@@ -6,7 +6,7 @@ export const homeContent: HomeContent = {
     description: "Turn scattered customer feedback into a clear, AI-prioritized roadmap.",
   },
   hero: {
-    eyebrow: "New · AI release impact analysis module",
+    eyebrow: "New · AI release impact analysis",
     title: "Turn scattered customer feedback into a clear, AI-prioritized roadmap.",
     subtitle:
       "PulseStack connects feedback from all your tools, finds patterns with AI, and tells you exactly what to ship next — and why.",
